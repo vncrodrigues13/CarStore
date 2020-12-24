@@ -1,4 +1,4 @@
-package Car;
+package Model;
 
 public enum State {
     NEW,
