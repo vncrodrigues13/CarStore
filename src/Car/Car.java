@@ -48,4 +48,15 @@ public class Car extends Model {
     public void setBodywork(Bodywork bodywork) {
         this.bodywork = bodywork;
     }
+
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "armored=" + armored +
+                ", optinalsList=" + optinalsList +
+                ", fuel=" + fuel +
+                ", bodywork=" + bodywork +
+                '}' + "\n" +super.toString();
+    }
 }

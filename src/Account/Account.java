@@ -5,13 +5,16 @@ public class Account {
     private Address address;
     private String number;
     private String email;
+    private char gender;
 
-    public Account(String name, String register, Address address, String number, String email) {
+
+    public Account(String name, String register, Address address, String number, String email, char gender) {
         this.name = name;
         this.register = register;
         this.address = address;
         this.number = number;
         this.email = email;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -52,5 +55,13 @@ public class Account {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
     }
 }

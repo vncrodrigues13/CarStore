@@ -115,4 +115,21 @@ public abstract class Model {
     public void setFactoryWarranty(boolean factoryWarranty) {
         this.factoryWarranty = factoryWarranty;
     }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", board='" + board + '\'' +
+                ", year=" + year +
+                ", kilometers=" + kilometers +
+                ", color=" + color +
+                ", state=" + state +
+                ", paidIPVA=" + paidIPVA +
+                ", uniqueOwner=" + uniqueOwner +
+                ", licensed=" + licensed +
+                ", factoryWarranty=" + factoryWarranty +
+                '}';
+    }
 }

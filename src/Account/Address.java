@@ -1,6 +1,7 @@
 package Account;
 
 public class Address {
+    private String registerUser;
     private String country;
     private String city;
     private String street;
@@ -8,7 +9,9 @@ public class Address {
     private String postal_code;
     private String description;
 
-    public Address(String country, String city, String street, int number, String postal_code, String description) {
+
+    public Address(String registerUser, String country, String city, String street, int number, String postal_code, String description) {
+        this.registerUser = registerUser;
         this.country = country;
         this.city = city;
         this.street = street;
@@ -64,4 +67,13 @@ public class Address {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getRegisterUser() {
+        return registerUser;
+    }
+
+    public void setRegisterUser(String registerUser) {
+        this.registerUser = registerUser;
+    }
+
 }
