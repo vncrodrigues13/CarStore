@@ -13,15 +13,21 @@ public class Announcement {
     private Account seller;
     // seller register would be the foreign key
     private Calendar postedDay;
+    private int count;
 
-    public Announcement(String title, String description, String announcementRegister, float price, Model motor, Account seller, Calendar postedDay) {
+    public Announcement(String title, String description, float price, Model motor, Account seller, Calendar postedDay) {
         this.title = title;
         this.description = description;
-        this.announcementRegister = announcementRegister;
+        defineAnnouncementRegister();
         this.price = price;
         this.motor = motor;
         this.seller = seller;
         this.postedDay = postedDay;
+        motor.setVehicleRegister(announcementRegister);
+    }
+
+    public void sendMenssage(String name, String email, String telefone, String menssage){
+
     }
 
     public String getTitle() {
@@ -38,6 +44,12 @@ public class Announcement {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void defineAnnouncementRegister(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(postedDay.get(Calendar.DATE)).append(postedDay.get(Calendar.MONTH)).append(postedDay.get(Calendar.YEAR)).append(count);
+        this.announcementRegister = stringBuilder.toString();
     }
 
     public String getAnnouncementRegister() {
@@ -62,6 +74,7 @@ public class Announcement {
 
     public void setMotor(Model motor) {
         this.motor = motor;
+        motor.setVehicleRegister(announcementRegister);
     }
 
     public Account getSeller() {

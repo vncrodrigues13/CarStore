@@ -4,6 +4,7 @@ public abstract class Model {
     private String name;
     private String brand;
     private String board;
+    private String vehicleRegister;
     private int year;
     private int kilometers;
     private Colors color;
@@ -13,19 +14,21 @@ public abstract class Model {
     private boolean licensed;   //licenceado
     private boolean factoryWarranty;    //garantia de fábrica
 
+
     public Model(String name, String brand, String board, int year, int kilometers, Colors color,
                  State state, boolean paidIPVA, boolean uniqueOwner, boolean licensed, boolean factoryWarranty) {
-        this.name = name;
-        this.brand = brand;
-        this.board = board;
-        this.year = year;
-        this.kilometers = kilometers;
-        this.color = color;
-        this.state = state;
-        this.paidIPVA = paidIPVA;
-        this.uniqueOwner = uniqueOwner;
-        this.licensed = licensed;
-        this.factoryWarranty = factoryWarranty;
+        setName(name);
+        setBrand(brand);
+        setBoard(board);
+        setYear(year);
+        setKilometers(kilometers);
+        setColor(color);
+        setState(state);
+        setPaidIPVA(paidIPVA);
+        setUniqueOwner(uniqueOwner);
+        setLicensed(licensed);
+        setFactoryWarranty(factoryWarranty);
+
     }
 
     public String getName() {
@@ -114,6 +117,14 @@ public abstract class Model {
 
     public void setFactoryWarranty(boolean factoryWarranty) {
         this.factoryWarranty = factoryWarranty;
+    }
+
+    public void setVehicleRegister(String vehicleRegister){
+        this.vehicleRegister = vehicleRegister;
+    }
+
+    public String getVehicleRegister(){
+        return this.vehicleRegister;
     }
 
     @Override

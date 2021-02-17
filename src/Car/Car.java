@@ -1,6 +1,10 @@
 package Car;
 import Model.*;
+
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Car extends Model {
     private boolean armored;    //blindado
@@ -15,6 +19,34 @@ public class Car extends Model {
         this.optinalsList = optinalsList;
         this.fuel = fuel;
         this.bodywork = bodywork;
+    }
+
+
+    public void addOptional(Optional op){
+        if (op != null){
+            this.optinalsList.add(op);
+        }
+    }
+
+    public void addOptional(Iterator<Optional> optinals){
+        while (optinals.hasNext()){
+            optinalsList.add(optinals.next());
+        }
+    }
+
+    public void removeOptional(Optional op){
+        if (op != null && optinalsList.contains(op))
+            optinalsList.remove(op);
+    }
+
+
+    public void removeOptional(Iterator<Optional> optionals){
+        while (optionals.hasNext()){
+            Optional op = optionals.next();
+            if (op != null && optinalsList.contains(op)){
+                optinalsList.remove(op);
+            }
+        }
     }
 
     public boolean isArmored() {
